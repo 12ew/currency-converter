@@ -18,11 +18,12 @@ class App extends React.Component {
 	}
 
 	onSelectCurrency(code) {
-		// console.log('Selected currency: ' + code);
-		const { currencies } = this.state;
+		console.log('Selected currency: ' + code);
+		const { currencies, currencyAVal } = this.state;
 		const currency = currencies.filter(currency => currency.code === code);
 		this.setState({
-			currencyB: currency[0]
+			currencyB: currency[0],
+			currencyBVal: currencyAVal * currency[0].sellRate
 		});
 	}
 
@@ -129,15 +130,16 @@ class App extends React.Component {
 							</div>
 						</div>
 					</div>
+					<br />
 					<div className="row">
 						<div className="col-sm-12">
 							{
 								//Update to currently selected currency
 							}
-							<p>
-								Exchange Rate -
+							<p className="text-center">
+								Exchange Rate:
 								{` ${currencyA.sign} ${currencyA.sellRate} ${currencyA.code}`} =
-								{`${currencyB.sign} ${currencyB.sellRate} ${currencyB.code}`}
+								{` ${currencyB.sign} ${currencyB.sellRate} ${currencyB.code}`}
 							</p>
 						</div>
 					</div>

@@ -47,6 +47,9 @@ header {
     .row-select-currency {
         text-align: center;
     }
+    h3, .h3 {
+        font-size: 16px;
+    }
     @media(min-width: 768px){
 
         .currency-from-input {
@@ -97,4 +100,14 @@ header {
     a {
         color: #fff;
     }
+}
+
+h3, .h3 {
+    font-size: 16px;
+}
+body {
+    font-size: 10px !important;
+}
+h2, .h2 {
+    font-size: 20px;
 }
